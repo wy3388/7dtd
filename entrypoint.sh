@@ -16,7 +16,7 @@ start() {
     fi
   elif [ "$1" = "START" ]; then
       echo "Start server"
-      cd /data && ./7DaysToDieServer.x86_64 -logfile=/data/7DaysToDieServer_Data/output_log__"$(date +%Y-%m-%d__%H-%M-%S)".txt -configfile=serverconfig.xml -quit -batchmode -nographics -dedicated
+      cd /data && export LD_LIBRARY_PATH=. && ./7DaysToDieServer.x86_64 -logfile=/data/7DaysToDieServer_Data/output_log__"$(date +%Y-%m-%d__%H-%M-%S)".txt -configfile=serverconfig.xml -quit -batchmode -nographics -dedicated
   else
      echo "please input START or DOWNLOAD"
   fi
